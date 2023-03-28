@@ -1,21 +1,29 @@
-pipeline{
-  agent any
-  stages('Build') {
-     steps {
-      bat 'echo Building the application..'
-      }
-    }
-    
-    stage ('Test') {
-        steps {
-            bat 'echo running unit tests...'
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                // build steps here
             }
-          }
-          
-          stage ('Deploy')
-            steps{
-              bat 'echo deploying the application..'
-             }
-           }
-         }
-       }
+        }
+        stage('Test') {
+            steps {
+                // test steps here
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // deploy steps here
+            }
+        }
+    }
+    post {
+        success {
+            // send notification on success
+        }
+        failure {
+            // send notification on failure
+        }
+    }
+}
+
