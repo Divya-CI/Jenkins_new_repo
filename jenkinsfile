@@ -3,27 +3,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // build steps here
+                echo 'Building the application...'
             }
         }
         stage('Test') {
             steps {
-                // test steps here
+                echo 'running unit tests...'
             }
         }
         stage('Deploy') {
             steps {
-                // deploy steps here
+                echo 'Deploying the application..'
             }
         }
     }
-    post {
-        success {
-            // send notification on success
-        }
-        failure {
-            // send notification on failure
-        }
-    }
-}
+  }
 
